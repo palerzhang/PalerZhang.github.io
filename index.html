@@ -1,1 +1,54 @@
-hello world!
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>PalerZhang</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon/cat.jpg">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="container pz-container">
+    <div class="col-md-6">
+        <div class="greetings">
+            <h1 class="name">PalerZhang</h1>
+            <p class="description text-right">-- a coder from 304</p>
+            <div class="sign-container">
+                <p>今天是<span id="today">2017/03/08</span></p>
+                <button class="btn btn-primary">签到</button>
+            </div>
+        </div>
+    </div>
+    <div class="calendar col-md-6">
+        <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li class="month-text">
+                    三月<br>
+                    <span>2017</span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="weekdays">
+            <li>星期一</li>
+            <li>星期二</li>
+            <li>星期三</li>
+            <li>星期四</li>
+            <li>星期五</li>
+            <li>星期六</li>
+            <li>星期日</li>
+        </ul>
+
+        <ul class="days" id="days">
+
+        </ul>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="scripts/lib/cos-js-sdk-v4.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
