@@ -191,7 +191,7 @@ window.onload = function () {
 
     function getSignLog() {
         return $.ajax({
-            url: 'http://palerzhang.oss-cn-shanghai.aliyuncs.com/data.json',
+            url: 'https://palerzhang.oss-cn-shanghai.aliyuncs.com/data.json',
             method: 'GET'
         });
     }
@@ -199,7 +199,7 @@ window.onload = function () {
 
     function setSignLog(data) {
         return $.ajax({
-            url: 'http://palerzhang.oss-cn-shanghai.aliyuncs.com/data.json',
+            url: 'https://palerzhang.oss-cn-shanghai.aliyuncs.com/data.json',
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
