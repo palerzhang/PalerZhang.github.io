@@ -14,8 +14,8 @@
             <h1 class="name">PalerZhang</h1>
             <p class="description text-right">-- a coder from 304</p>
             <div class="sign-container">
-                <p>今天是<span id="today">2017/03/08</span></p>
-                <button class="btn btn-primary">签到</button>
+                <p>今天是<span id="today"></span></p>
+                <button class="btn btn-primary" id="sign-btn">签到</button>
             </div>
         </div>
     </div>
@@ -25,20 +25,20 @@
                 <li class="prev">&#10094;</li>
                 <li class="next">&#10095;</li>
                 <li class="month-text">
-                    三月<br>
-                    <span>2017</span>
+                    <span id="month"></span><br>
+                    <span id="year"></span>
                 </li>
             </ul>
         </div>
 
         <ul class="weekdays">
+            <li>星期日</li>
             <li>星期一</li>
             <li>星期二</li>
             <li>星期三</li>
             <li>星期四</li>
             <li>星期五</li>
             <li>星期六</li>
-            <li>星期日</li>
         </ul>
 
         <ul class="days" id="days">
