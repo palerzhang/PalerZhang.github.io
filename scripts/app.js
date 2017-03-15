@@ -1,18 +1,18 @@
 window.onload = function () {
-
+    var curDate = new Date();
 
     getSignLog().then(function (data) {
         setCalendar(new Date(), data);
         setToday(new Date());
-        setArrowClickFunc();
+        setArrowClickFunc(data);
         setSignBtnClickFunc(data);
     });
 
 
-    function setCalendar(date, signLog) {
-        setYear(date.getYear() + 1900);
-        setMonth(date.getMonth() + 1);
-        setDays(date, signLog);
+    function setCalendar(newDate, signLog) {
+        setYear(newDate.getYear() + 1900);
+        setMonth(newDate.getMonth() + 1);
+        setDays(newDate, signLog);
     }
 
 
@@ -81,8 +81,52 @@ window.onload = function () {
     }
 
 
-    function setArrowClickFunc() {
+    function setArrowClickFunc(data) {
+        var prevArrow = document.getElementById('prev'),
+            nextArrow = document.getElementById('next');
 
+        prevArrow.onclick = function () {
+            curDate = moveMonth(curDate, false);
+            cleanDays();
+            setCalendar(curDate, data);
+        };
+
+        nextArrow.onclick = function () {
+            curDate = moveMonth(curDate, true);
+            cleanDays();
+            setCalendar(curDate, data);
+        };
+
+        function moveMonth(date, add) {
+            var year = date.getYear() + 1900,
+                month = date.getMonth();
+
+            if (add) {
+                if (month < 12) {
+                    month++;
+                }
+                else {
+                    month = 1;
+                    year++;
+                }
+            }
+            else {
+                if (month > 0) {
+                    month--;
+                }
+                else {
+                    month = 11;
+                    year--;
+                }
+            }
+
+            return new Date(year, month, 1);
+        }
+    }
+
+
+    function cleanDays(){
+        $('#days').empty();
     }
 
     function setToday(time) {
@@ -120,6 +164,7 @@ window.onload = function () {
                         li.setAttribute('class', 'active');
                     }
                 });
+                alert('签到成功');
             }
         };
     }
